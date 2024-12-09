@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ArrayObjectIteratorTest {
 
     @Test
-    public void testIteration() {
+    public void testIteration_overIntegerArray() {
         Integer[] testArray = {1, 2, 3};
         ArrayObjectIterator<Integer> iterator = new ArrayObjectIterator<>(testArray);
 
@@ -23,7 +23,7 @@ public class ArrayObjectIteratorTest {
     }
 
     @Test
-    public void testEmptyArray() {
+    public void testingEmptyArray_willReturnFalse() {
         String[] emptyArray = {};
         ArrayObjectIterator<String> iterator = new ArrayObjectIterator<>(emptyArray);
 
@@ -31,7 +31,7 @@ public class ArrayObjectIteratorTest {
     }
 
     @Test
-    public void testNoSuchElementException() {
+    public void testNoSuchElementException_whenIteratorHasNoNext() {
         Integer[] testArray = {1};
         ArrayObjectIterator<Integer> iterator = new ArrayObjectIterator<>(testArray);
 
@@ -40,7 +40,7 @@ public class ArrayObjectIteratorTest {
     }
 
     @Test
-    public void testNullArray() {
+    public void testArray_whenNullProvided() {
         assertThrows(IllegalArgumentException.class, () -> new ArrayObjectIterator<>(null));
     }
 }
